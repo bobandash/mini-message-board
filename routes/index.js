@@ -16,11 +16,11 @@ const messages = [
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Mini Messageboard', messages: messages });
 });
 
 router.get("/new", function(req, res) {
-  res.send("<p>Hi</p>");
+  res.render('form', {title: 'Add Message'})
 })
 
 module.exports = router;
