@@ -4,7 +4,7 @@ const {DateTime} = require('luxon');
 
 const MessageSchema = new Schema({
   date_of_message: {
-    type: String,
+    type: Date,
   },
   username: {
     type: String,
@@ -21,6 +21,11 @@ const MessageSchema = new Schema({
 
 MessageSchema.virtual('date_of_message_formatted').get(function(){
   return this.date_of_message ? DateTime.fromJSDate(this.date_of_message).toLocaleString(DateTime.DATE_MED) : '';
+})
+
+
+MessageSchema.virtual('time').get(function(){
+  return this.date_of_message ? DateTime.fromJSDate(this.date_of_message).toLocaleString(DateTime.TIME_SIMPLE) : '';
 })
 
 module.exports = mongoose.model("Message", MessageSchema);
