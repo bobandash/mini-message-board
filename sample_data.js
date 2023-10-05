@@ -24,22 +24,22 @@ async function messageCreate({date_of_message, username, message}){
 
 async function createMessages(){
   await messageCreate({
-      date_of_message: new Date('05 October 2011 14:48 UTC'),
+      date_of_message: new Date("2011-10-05"),
       username: 'Bob Ross',
       message: 'Anyone want to paint?'
   })
   await messageCreate({
-    date_of_message: new Date('06 October 2011 14:48 UTC'),
+    date_of_message: new Date("2011-10-05"),
     username: 'Stranger 1',
     message: 'Yeah sure!'
   })
   await messageCreate({
-    date_of_message: new Date('06 October 2011 16:48 UTC'),
+    date_of_message: new Date("2011-10-05"),
     username: 'Stranger 2',
     message: `I'm down!`
   })
   await messageCreate({
-    date_of_message: new Date('06 October 2011 18:48 UTC'),
+    date_of_message: new Date("2011-10-05"),
     username: 'Stranger 3',
     message: `Where'd this group chat come from?`
   })
