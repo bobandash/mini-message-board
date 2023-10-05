@@ -1,8 +1,144 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: darkgray;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+}
+
+.container {
+  width: 100%;
+  min-height: 800px;
+  height: 100vh;
+  background-color: lightcoral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container {
+  width: 97.5%;
+  padding: 20px 30px;
+  max-width: 800px;
+  height: 95%;
+  border-radius: 20px;
+  position: relative;
+  background-color: white;
+}
+
+.messages-container {
+  margin-top: 10px;
+  position: relative;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.message-content {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.message:last-child {
+  margin-bottom: 15px;
+}
+
+p {
+  margin: 0;
+}
+
+.message-time {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.date {
+  text-align: center;
+}
+
+.username {
+  font-size: 14px;
+  color: darkgray;
+}
+
+.username {
+  margin-top: 20px;
+}
+
+.message-text {
+  margin-top: 4px;
+}
+
+.message-text {
+  display: inline-block;
+  border-radius: 15px;
+  background-color: rgb(235, 235, 235);
+  padding: 10px 12.5px;
+  max-width: 80%;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+.messages-form {
+  margin-top: 20px;
+}
+
+.form-inputs-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.form-inputs-container input {
+  width: 100%;
+  font-size: 14px;
+  padding: 4px 6px
+}
+
+.form-inputs-container input {
+  border-right: 0px;
+}
+
+.form-inputs-container input:nth-child(1){
+  border-top-left-radius: 5px;
+  border-bottom: 0px;
+}
+
+.form-inputs-container input:nth-child(2){
+  border-bottom-left-radius: 5px;
+}
+
+.messages-form button {
+  padding: 0px 20px;
+  background-color: lightcoral;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.messages-form button:hover {
+  cursor: pointer;
+  background-color: rgb(240, 128, 128, 0.8); 
+}
+
+.send-icon {
+  width: 30px;
+}
+
+.error-messages {
+  list-style-type: none;
+  padding: 0;
+  color: red;
 }

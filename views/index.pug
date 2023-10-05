@@ -1,10 +1,60 @@
-extends layout
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/javascripts/render_last_message.js" defer)
+  body
+    block content
+    div.container
+      div.content-container
+        h1.title= title
+        div.messages-container
+          - let currentDate = '';
+          - let isNewDate = true;
+          - let currentUsername = '';
+          - let isNewUsername = true;
+          each message in messages
+            - (message.date_of_message_formatted == currentDate ? isNewDate = false : (currentDate = message.date_of_message_formatted, isNewDate = true))
+            if isNewDate 
+              p.date #{message.date_of_message_formatted}
+            div.message
+              - (message.username == currentUsername ? isNewUsername = false : (currentUsername = message.username, isNewUsername = true))
+              if isNewUsername
+                p.username #{message.username}
+              div.message-content
+                div.message-text-container
+                  p.message-text #{message.message}
+                div.message-time-container
+                  p.message-time #{message.time}
+        form.messages-form(
+          method= "POST"
+          action= "/"
+          accept-charset="utf-8")
+          div.form-inputs-container
+            input(
+              type= "text"
+              name= "username"
+              placeholder= "Username"
+              autocomplete= "off"
+              if username 
+                value= username
+            )
+            input(
+              type= "text"
+              name= "message"
+              placeholder= "Message"
+              autocomplete= "off"
+            )
+          button(
+            type= "submit"
+          ) 
+            img.send-icon(src='/images/send_icon.png')
+          
+        if errors 
+          ul.error-messages
+            each error in errors 
+              li= error.msg
 
-block content
-  h1= title
-  each message in messages    
-    p = #{message.user}
-    p = #{message.text}
-    p = #{message.added}
 
 
