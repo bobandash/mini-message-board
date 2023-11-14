@@ -13,7 +13,7 @@ Backend:
 
 ## Quick Start:
 1. Fork the project
-2. Clone the project using git clone git@github.com:<YOUR-USERNAME>/mini-message-board.git
+2. Clone the project using git clone git@github.com:YOUR-USERNAME/mini-message-board.git
 3. Open the project using the editor of your choice
 4. Run npm install
 5. Create a database on mongoDB and run node sample_data.js <driver-url>
